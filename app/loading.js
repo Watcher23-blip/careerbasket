@@ -5,7 +5,7 @@ export default function Loading() {
     <div className={styles.container}>
       {/* Elegant Branding */}
       <div className={styles.brand}>
-        DataTech<span className="font-light opacity-60">Services</span>
+        Career<span className="font-light opacity-60">Basket</span>
       </div>
 
       <div className={styles.contentBox}>
@@ -32,7 +32,7 @@ export default function Loading() {
       
       {/* Optional: Simple subtle watermark at the bottom */}
       <div className="absolute bottom-10 text-[10px] uppercase tracking-[0.3em] text-violet-300 font-bold">
-        Growthforge DTS
+      careerbasket.in
       </div>
     </div>
   );

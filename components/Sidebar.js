@@ -85,7 +85,7 @@ export default function Sidebar({ initialUser }) {
       <div className="h-20 flex items-center px-6 border-b border-slate-100 gap-2">
         <Activity size={20} className="text-violet-600 " />
         <span className={`${robotoSlab.className} text-violet-600 tracking-tighter text-xl font-bold truncate`}>
-          Data Tech.
+        Career Basket
         </span>
       </div>
 

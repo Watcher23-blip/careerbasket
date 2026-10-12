@@ -2,8 +2,8 @@ import "./globals.css";
 import { passero, robotoSlab, ubuntu } from "@/lib/fonts";
 
 export const metadata = {
-  title: 'DataTechService | Expert Data Solutions',
-  description: 'The leading platform for managed data services and web insights.',
+  title: 'Career Basket ',
+  description: 'The leading platform for managed freelance services and remote work.',
 }
 
 export default function RootLayout({ children }) {
