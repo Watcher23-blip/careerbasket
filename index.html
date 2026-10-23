@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerBasket | Loading</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #171717;
+      min-height: 100vh;
+    }
+
+    .loading-screen {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      height: 76px;
+      padding: 0 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -0.7px;
+    }
+
+    .logo-icon {
+      color: #6d28d9;
+      font-size: 25px;
+    }
+
+    .logo span:last-child {
+      color: #6d28d9;
+    }
+
+    .workspace-label {
+      font-size: 12px;
+      color: #737373;
+    }
+
+    /* Main Content */
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 430px;
+    }
+
+    .icon-box {
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f0ff;
+      color: #6d28d9;
+      border-radius: 14px;
+      font-size: 27px;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: #6d28d9;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 38px);
+      line-height: 1.2;
+      letter-spacing: -1.2px;
+      font-weight: 700;
+    }
+
+    .description {
+      margin-top: 14px;
+      color: #737373;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* Loading Bar */
+    .progress-section {
+      margin-top: 34px;
+    }
+
+    .progress-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .progress-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: #404040;
+    }
+
+    .spinner {
+      width: 17px;
+      height: 17px;
+      border: 2px solid #e5e5e5;
+      border-top-color: #6d28d9;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    .progress-track {
+      height: 5px;
+      width: 100%;
+      background: #f0edf5;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 35%;
+      background: #6d28d9;
+      border-radius: 10px;
+      animation: loading 1.8s ease-in-out infinite;
+    }
+
+    .status {
+      margin-top: 22px;
+      font-size: 12px;
+      color: #a3a3a3;
+    }
+
+    /* Footer */
+    .footer {
+      min-height: 60px;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      border-top: 1px solid #f0f0f0;
+      font-size: 11px;
+      color: #a3a3a3;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes loading {
+      0% {
+        transform: translateX(-120%);
+      }
+      100% {
+        transform: translateX(310%);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        height: 68px;
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .main {
+        padding: 45px 24px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .footer {
+        padding: 18px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .spinner,
+      .progress-bar {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading-screen">
+
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">▣</span>
+        <div>Career<span>Basket</span></div>
+      </div>
+
+      <div class="workspace-label">Workspace</div>
+    </header>
+
+    <main class="main">
+      <div class="content">
+
+        <div class="icon-box">▣</div>
+
+        <p class="eyebrow">JUST A MOMENT</p>
+
+        <h1>Getting things ready.</h1>
+
+        <p class="description">
+          Setting up your CareerBasket workspace.
+          Everything will be ready shortly.
+        </p>
+
+        <div class="progress-section">
+
+          <div class="progress-header">
+            <span class="progress-text">Preparing your workspace</span>
+            <span class="spinner"></span>
+          </div>
+
+          <div class="progress-track">
+            <div class="progress-bar"></div>
+          </div>
+
+          <p class="status">
+            Please wait while we prepare your experience.
+          </p>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 CareerBasket</span>
+      <span>Built for your next step.</span>
+    </footer>
+
+  </div>
+</body>
+</html>

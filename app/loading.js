@@ -1,38 +1,31 @@
-import styles from './loading.module.css';
-
+'use client';
 export default function Loading() {
   return (
-    <div className={styles.container}>
-      {/* Elegant Branding */}
-      <div className={styles.brand}>
-        Career<span className="font-light opacity-60">Basket</span>
-      </div>
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white">
+      <div className="w-64 max-w-[75vw]">
+        {/* Brand */}
+        <h1 className="text-center text-3xl font-semibold tracking-tight text-slate-900">
+          Career<span className="text-blue-600">Basket</span>
+        </h1>
 
-      <div className={styles.contentBox}>
-        {/* Subtle Message */}
-        <p className={styles.subtitle}>
-          Initializing Workspace
+        {/* Animated Loading Dots */}
+        <div className="mt-7 flex items-center justify-center gap-2">
+          {[0, 1, 2, 3].map((dot) => (
+            <span
+              key={dot}
+              className="h-2 w-2 rounded-full bg-blue-600 animate-bounce"
+              style={{
+                animationDelay: `${dot * 150}ms`,
+                animationDuration: '700ms',
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Loading Text */}
+        <p className="mt-4 text-center text-xs tracking-wide text-slate-400">
+          Please wait while we prepare your page...
         </p>
-
-        {/* Minimalist Progress */}
-        <div className={styles.progressTrack}>
-          <div className={styles.progressBar}></div>
-        </div>
-
-        {/* Professional Status Ticker */}
-        <div className={styles.statusWrapper}>
-          <div className={styles.statusList}>
-            <div className={styles.statusItem}>Verifying Identity</div>
-            <div className={styles.statusItem}>Preparing Admin Panel</div>
-            <div className={styles.statusItem}>Fetching Real-time Data</div>
-            <div className={styles.statusItem}>Finalizing Environment</div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Optional: Simple subtle watermark at the bottom */}
-      <div className="absolute bottom-10 text-[10px] uppercase tracking-[0.3em] text-violet-300 font-bold">
-      careerbasket.in
       </div>
     </div>
   );
